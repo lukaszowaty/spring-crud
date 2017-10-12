@@ -35,12 +35,12 @@ public class HibernateConfig {
 	
 	@Bean
 	public LocalSessionFactoryBean getSessionFactory() {
-		LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
+	    LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 
-		Properties props = new Properties();
-		// Setting JDBC properties
-		props.put(DRIVER, env.getProperty("mysql.driver"));
-		props.put(URL, env.getProperty("mysql.url"));
+	    Properties props = new Properties();
+	    // Setting JDBC properties defined in db.properties
+	    props.put(DRIVER, env.getProperty("mysql.driver"));
+	    props.put(URL, env.getProperty("mysql.url"));
 	    props.put(USER, env.getProperty("mysql.user"));
 	    props.put(PASS, env.getProperty("mysql.password"));
 	    
